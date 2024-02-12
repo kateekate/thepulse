@@ -2,7 +2,7 @@ import { extendTheme } from "@chakra-ui/react";
 
 export const theme = extendTheme({
   colors: {
-    background: "#f4eee9",
+    background: "black",
   },
   fonts: {
     body: "Arial, sans-serif",
