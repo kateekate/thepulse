@@ -1,7 +1,15 @@
 import styled from "styled-components";
 import Poster1 from "./images/img1.png";
+import Poster2 from "./images/img2.png";
+
 import Animation1 from "./images/back.gif";
-import { SimpleGrid } from "@chakra-ui/react";
+
+import FlipCard from "./FlipCard/FlipCard";
+
+import img1 from "./images/frontImage/img1.png";
+import img2 from "./images/frontImage/img2.png";
+import img3 from "./images/frontImage/img3.png";
+import img4 from "./images/frontImage/img4.png";
 
 export const LandingComponent = () => {
   const Header = styled.h1`
@@ -27,6 +35,7 @@ export const LandingComponent = () => {
 
   const LText = styled(Text)`
     font-size: 1.5vw;
+    color: white;
   `;
 
   const XlText = styled(Text)`
@@ -35,10 +44,18 @@ export const LandingComponent = () => {
     line-height: 1.25;
   `;
 
+  const XXLText = styled(Text)`
+    font-size: 10vw;
+    font-weight: 800;
+    line-height: 1.25;
+    text-align: center;
+  `;
+
   const SubHeader = styled.p`
     padding: 0 40px;
     font-size: 5vw;
     font-weight: 600;
+    color: #6a6868bf;
     text-align: center;
     text-transform: uppercase;
   `;
@@ -74,18 +91,23 @@ export const LandingComponent = () => {
     justify-content: center;
     padding: 30px 0;
     gap: 0;
+
+    transition: transform 0.3s;
+    &:hover {
+      transform: scale(1.1);
+    }
   `;
 
   const Image = styled.img`
-    width: 90vw;
+    width: 80vw;
     height: auto;
   `;
 
   const BackgroundContainer = styled.div`
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
     padding: 20px;
     background-image: url(${Animation1});
@@ -93,10 +115,22 @@ export const LandingComponent = () => {
     background-position: center;
   `;
 
-  const TextWithBorder = styled(SubHeader)`
-    background-color: black;
-    border: 2px solid #fff;
-    padding: 20px;
+  const ServiceContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  `;
+
+  const TextServiceContainer = styled.div`
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    gap: 40px;
   `;
 
   return (
@@ -150,13 +184,31 @@ export const LandingComponent = () => {
         </TextContainerPadding>
 
         <BackgroundContainer>
-          <SimpleGrid spacing={5}>
-            <TextWithBorder>Give</TextWithBorder>
-            <TextWithBorder>Us</TextWithBorder>
-            <TextWithBorder>Your</TextWithBorder>
-            <TextWithBorder>Inspire</TextWithBorder>
-          </SimpleGrid>
+          <FlipCard text={"Give"} frontImage={img1} />
+          <FlipCard text={"Us"} frontImage={img2} />
+          <FlipCard text={"Your"} frontImage={img3} />
+          <FlipCard text={"Inspire"} frontImage={img4} />
         </BackgroundContainer>
+
+        <ServiceContainer>
+          <LText>Our Services</LText>
+          <TextServiceContainer>
+            <MText>
+              We are gradually adding new functionality and we welcome your
+              suggestions and feedback.
+            </MText>
+            <XXLText>Follow time</XXLText>
+            <MText>
+              We are gradually adding new functionality and we welcome your
+              suggestions and feedback.
+            </MText>
+          </TextServiceContainer>
+          <LText>Our Services</LText>
+        </ServiceContainer>
+
+        <ImageContainer>
+          <Image src={Poster2} alt="poster2" />
+        </ImageContainer>
       </MainContainer>
     </div>
   );
