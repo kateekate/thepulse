@@ -11,128 +11,150 @@ import img2 from "./images/frontImage/img2.png";
 import img3 from "./images/frontImage/img3.png";
 import img4 from "./images/frontImage/img4.png";
 
+const Header = styled.h1`
+  position: absolute;
+  top: 15vw;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #614a90;
+  z-index: -10;
+  font-size: 35vw;
+  font-weight: 800;
+  text-transform: uppercase;
+`;
+
+const Text = styled.h2`
+  font-size: 1.3vw;
+  text-transform: uppercase;
+`;
+
+const MText = styled(Text)`
+  font-size: 1rem;
+`;
+
+const LText = styled(Text)`
+  font-size: 1.5vw;
+  color: white;
+`;
+
+const XlText = styled(Text)`
+  font-size: 2.8vw;
+  font-weight: 400;
+  line-height: 1.25;
+`;
+
+const XXLText = styled(Text)`
+  font-size: 10vw;
+  font-weight: 800;
+  line-height: 1.25;
+  text-align: center;
+`;
+
+const SubHeader = styled.p`
+  padding: 0 40px;
+  font-size: 5vw;
+  font-weight: 600;
+  color: #6a6868bf;
+  text-align: center;
+  text-transform: uppercase;
+`;
+
+const MainContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-top: 25vw;
+  gap: 60px;
+`;
+
+const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+`;
+
+const TextContainerPadding = styled(TextContainer)`
+  padding: 0 25vw;
+  text-align: justify;
+`;
+
+const DescriptionContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 40px 0 40px;
+  gap: 40px;
+`;
+
+const ImageContainer = styled(DescriptionContainer)`
+  justify-content: center;
+  padding: 30px 0;
+  gap: 0;
+
+  transition: transform 0.3s;
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
+
+const Image = styled.img`
+  width: 80vw;
+  height: auto;
+`;
+
+const BackgroundContainer = styled.div`
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+  padding: 20px;
+  background-image: url(${Animation1});
+  background-size: cover;
+  background-position: center;
+`;
+
+const ServiceContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+`;
+
+const TextServiceContainer = styled.div`
+  width: 90vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  gap: 40px;
+`;
+
+const FlipCardColumn = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+`;
+
+const FlipCardRow = styled.div`
+  width: 30vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+`;
+
+const BlurTextContainer = styled(MText)`
+  backdrop-filter: blur(5px);
+  padding: 5px;
+`;
+
 export const LandingComponent = () => {
-  const Header = styled.h1`
-    position: absolute;
-    top: 15vw;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #614a90;
-    z-index: -10;
-    font-size: 35vw;
-    font-weight: 800;
-    text-transform: uppercase;
-  `;
-
-  const Text = styled.h2`
-    font-size: 1.3vw;
-    text-transform: uppercase;
-  `;
-
-  const MText = styled(Text)`
-    font-size: 1rem;
-  `;
-
-  const LText = styled(Text)`
-    font-size: 1.5vw;
-    color: white;
-  `;
-
-  const XlText = styled(Text)`
-    font-size: 2.8vw;
-    font-weight: 400;
-    line-height: 1.25;
-  `;
-
-  const XXLText = styled(Text)`
-    font-size: 10vw;
-    font-weight: 800;
-    line-height: 1.25;
-    text-align: center;
-  `;
-
-  const SubHeader = styled.p`
-    padding: 0 40px;
-    font-size: 5vw;
-    font-weight: 600;
-    color: #6a6868bf;
-    text-align: center;
-    text-transform: uppercase;
-  `;
-
-  const MainContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    padding-top: 25vw;
-    gap: 60px;
-  `;
-
-  const TextContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 60px;
-  `;
-
-  const TextContainerPadding = styled(TextContainer)`
-    padding: 0 25vw;
-    text-align: justify;
-  `;
-
-  const DescriptionContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0 40px 0 40px;
-    gap: 40px;
-  `;
-
-  const ImageContainer = styled(DescriptionContainer)`
-    justify-content: center;
-    padding: 30px 0;
-    gap: 0;
-
-    transition: transform 0.3s;
-    &:hover {
-      transform: scale(1.1);
-    }
-  `;
-
-  const Image = styled.img`
-    width: 80vw;
-    height: auto;
-  `;
-
-  const BackgroundContainer = styled.div`
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    background-image: url(${Animation1});
-    background-size: cover;
-    background-position: center;
-  `;
-
-  const ServiceContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-  `;
-
-  const TextServiceContainer = styled.div`
-    width: 90vw;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    text-align: justify;
-    gap: 40px;
-  `;
-
   return (
     <div>
       <Header>Pulse</Header>
@@ -184,10 +206,28 @@ export const LandingComponent = () => {
         </TextContainerPadding>
 
         <BackgroundContainer>
-          <FlipCard text={"Give"} frontImage={img1} />
-          <FlipCard text={"Us"} frontImage={img2} />
-          <FlipCard text={"Your"} frontImage={img3} />
-          <FlipCard text={"Inspire"} frontImage={img4} />
+          <FlipCardRow>
+            <BlurTextContainer>
+              We believe in the power of storytelling and its ability to connect
+              people. We are dedicated to creating experiences that resonate
+              with your audience, leaving a lasting impression that goes beyond
+              the event.
+            </BlurTextContainer>
+          </FlipCardRow>
+          <FlipCardColumn>
+            <FlipCard text={"Give"} frontImage={img1} />
+            <FlipCard text={"Us"} frontImage={img2} />
+            <FlipCard text={"Your"} frontImage={img3} />
+            <FlipCard text={"Inspire"} frontImage={img4} />
+          </FlipCardColumn>
+          <FlipCardRow>
+            <BlurTextContainer>
+              We believe in the power of storytelling and its ability to connect
+              people. We are dedicated to creating experiences that resonate
+              with your audience, leaving a lasting impression that goes beyond
+              the event.
+            </BlurTextContainer>
+          </FlipCardRow>
         </BackgroundContainer>
 
         <ServiceContainer>
