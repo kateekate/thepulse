@@ -43,7 +43,7 @@ const MText = styled(Text)`
 
 const LText = styled(Text)`
   font-size: 1.5vw;
-  color: white;
+  color: #ffffffab;
 `;
 
 const XlText = styled(Text)`
@@ -57,7 +57,7 @@ const fillTextAnimation = keyframes`
     color: #6a6868bf;
   }
   to {
-    color: #fff;
+    color: #ffffffab;
   }
 `;
 
@@ -67,11 +67,11 @@ const XXLText = styled(Text)`
   line-height: 1.25;
   text-align: center;
 
-  transition: color 0.5s ease;
+  transition: color 0.3s ease;
   cursor: pointer;
 
   &:hover {
-    animation: ${fillTextAnimation} 1s forwards;
+    animation: ${fillTextAnimation} 0.5s forwards;
   }
 `;
 
@@ -83,8 +83,10 @@ const SubHeader = styled.p`
   text-align: center;
   text-transform: uppercase;
 
+  transition: color 0.3s ease;
+
   &:hover {
-    animation: ${fillTextAnimation} 1s forwards;
+    animation: ${fillTextAnimation} 0.5s forwards;
   }
 `;
 

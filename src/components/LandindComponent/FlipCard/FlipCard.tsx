@@ -57,7 +57,7 @@ const Back = styled(Card)`
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
-  color: white;
+  color: #ffffffab;
   font-weight: 600;
   text-align: center;
   background-color: black;
