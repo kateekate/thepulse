@@ -1,5 +1,11 @@
-import styled, { keyframes } from "styled-components";
-import { LText, MText, XlText } from "components/shared/Text";
+import styled from "styled-components";
+import {
+  Header,
+  LText,
+  MText,
+  SubHeader,
+  XlText,
+} from "components/shared/Text";
 import { DescriptionContainer } from "components/DescriptionContainer/DescriptionContainer";
 import { CarouselContainer } from "components/CarouselContainer/CarouselContainer";
 import { ServiceContainer } from "components/ServiceContainer/ServiceContainer";
@@ -9,45 +15,10 @@ import {
   TextContainer,
   TextContainerWithPadding,
 } from "components/shared/TextContainer";
+import { PlayBtnContainer } from "components/PlayBtnContainer/PlayBtnContainer";
+import { FooterContainer } from "components/FooterContainer/FooterContainer";
 import poster1 from "../../images/poster1.png";
 import poster2 from "../../images/poster2.png";
-import { PlayBtnContainer } from "components/PlayBtnContainer/PlayBtnContainer";
-
-const Header = styled.h1`
-  position: absolute;
-  top: 15vw;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #9078e9cc;
-  z-index: -10;
-  font-size: 35vw;
-  font-weight: 800;
-  text-transform: uppercase;
-`;
-
-const fillTextAnimation = keyframes`
-  from {
-    color: #6a6868bf;
-  }
-  to {
-    color: #ffffffab;
-  }
-`;
-
-const SubHeader = styled.p`
-  padding: 0 40px;
-  font-size: 5vw;
-  font-weight: 600;
-  color: #6a6868bf;
-  text-align: center;
-  text-transform: uppercase;
-
-  transition: color 0.3s ease;
-
-  &:hover {
-    animation: ${fillTextAnimation} 0.5s forwards;
-  }
-`;
 
 const MainContainer = styled.div`
   display: flex;
@@ -87,11 +58,11 @@ export const LandingComponent = () => {
             event.
           </MText>
         </TextContainerWithPadding>
-
         <FlipCardsContainer />
         <ServiceContainer />
         <ImageContainer src={poster2} alt="poster2" />
         <PlayBtnContainer />
+        <FooterContainer />
       </MainContainer>
     </div>
   );
