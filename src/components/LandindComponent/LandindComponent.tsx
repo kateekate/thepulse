@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { Parallax } from "react-scroll-parallax";
+
 import {
   Header,
   LText,
@@ -39,30 +41,45 @@ export const LandingComponent = () => {
 
         <DescriptionContainer />
         <CarouselContainer />
-        <ImageContainer src={poster1} alt="poster1" />
+        <Parallax speed={-5}>
+          <ImageContainer src={poster1} alt="poster1" />
+        </Parallax>
+        <Parallax speed={-3}>
+          <SubHeader>
+            Think Big & Designing Today for Tomorrow&apos;s Stories
+          </SubHeader>
+        </Parallax>
+        <Parallax speed={-3}>
+          <TextContainerWithPadding>
+            <XlText>
+              Our team of creative minds and technical experts are passionate
+              about delivering exceptional experiences that captivate and
+              inspire.
+            </XlText>
 
-        <SubHeader>
-          Think Big & Designing Today for Tomorrow&apos;s Stories
-        </SubHeader>
-
-        <TextContainerWithPadding>
-          <XlText>
-            Our team of creative minds and technical experts are passionate
-            about delivering exceptional experiences that captivate and inspire.
-          </XlText>
-
-          <MText>
-            We believe in the power of storytelling and its ability to connect
-            people. We are dedicated to creating experiences that resonate with
-            your audience, leaving a lasting impression that goes beyond the
-            event.
-          </MText>
-        </TextContainerWithPadding>
+            <MText>
+              We believe in the power of storytelling and its ability to connect
+              people. We are dedicated to creating experiences that resonate
+              with your audience, leaving a lasting impression that goes beyond
+              the event.
+            </MText>
+          </TextContainerWithPadding>
+        </Parallax>
         <FlipCardsContainer />
-        <ServiceContainer />
-        <ImageContainer src={poster2} alt="poster2" />
-        <PlayBtnContainer />
-        <FooterContainer />
+
+        <Parallax speed={-5}>
+          <ServiceContainer />
+        </Parallax>
+        <Parallax speed={-5}>
+          <ImageContainer src={poster2} alt="poster2" />
+        </Parallax>
+
+        <Parallax speed={-5}>
+          <PlayBtnContainer />
+        </Parallax>
+        <Parallax speed={-8}>
+          <FooterContainer />
+        </Parallax>
       </MainContainer>
     </div>
   );

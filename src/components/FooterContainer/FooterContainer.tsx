@@ -3,6 +3,7 @@ import { FooterHeader } from "components/shared/Text";
 
 const Container = styled.div`
   height: auto;
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
