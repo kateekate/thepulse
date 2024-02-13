@@ -1,6 +1,15 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Poster1 from "./images/img1.png";
-import Poster2 from "./images/img2.png";
+import Poster2 from "./images//img2.png";
+
+import CarouselImg1 from "./images/carouselImg/1.png";
+import CarouselImg2 from "./images/carouselImg/2.png";
+import CarouselImg3 from "./images/carouselImg/3.png";
+import CarouselImg4 from "./images/carouselImg/4.png";
+
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import Animation1 from "./images/back.gif";
 
@@ -43,11 +52,27 @@ const XlText = styled(Text)`
   line-height: 1.25;
 `;
 
+const fillTextAnimation = keyframes`
+  from {
+    color: #6a6868bf;
+  }
+  to {
+    color: #fff;
+  }
+`;
+
 const XXLText = styled(Text)`
   font-size: 10vw;
   font-weight: 800;
   line-height: 1.25;
   text-align: center;
+
+  transition: color 0.5s ease;
+  cursor: pointer;
+
+  &:hover {
+    animation: ${fillTextAnimation} 1s forwards;
+  }
 `;
 
 const SubHeader = styled.p`
@@ -57,6 +82,10 @@ const SubHeader = styled.p`
   color: #6a6868bf;
   text-align: center;
   text-transform: uppercase;
+
+  &:hover {
+    animation: ${fillTextAnimation} 1s forwards;
+  }
 `;
 
 const MainContainer = styled.div`
@@ -151,10 +180,47 @@ const FlipCardRow = styled.div`
 
 const BlurTextContainer = styled(MText)`
   backdrop-filter: blur(5px);
-  padding: 5px;
+  padding: 15px;
+`;
+
+const CarouselContainer = styled.div`
+  width: 100%;
+  padding: 20px 40px;
+`;
+
+const CarouselImage = styled.img`
+  width: 100%;
+  height: auto;
+  border: 3px solid black;
+`;
+
+const SliderContainer = styled.div`
+  .slick-dots li button:before {
+    color: white;
+  }
+
+  .slick-dots li.slick-active button:after {
+    color: white;
+  }
+
+  .slick-dots li.slick-active button:before {
+    opacity: 1;
+    color: #fff;
+  }
 `;
 
 export const LandingComponent = () => {
+  const settings = {
+    dots: true,
+    speed: 1000,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: false,
+  };
+
   return (
     <div>
       <Header>Pulse</Header>
@@ -182,6 +248,25 @@ export const LandingComponent = () => {
             in the industry.
           </Text>
         </DescriptionContainer>
+
+        <CarouselContainer>
+          <SliderContainer>
+            <Slider {...settings}>
+              <div>
+                <CarouselImage src={CarouselImg1} alt="carouselImg1" />
+              </div>
+              <div>
+                <CarouselImage src={CarouselImg2} alt="carouselImg2" />
+              </div>
+              <div>
+                <CarouselImage src={CarouselImg3} alt="carouselImg3" />
+              </div>
+              <div>
+                <CarouselImage src={CarouselImg4} alt="carouselImg4" />
+              </div>
+            </Slider>
+          </SliderContainer>
+        </CarouselContainer>
 
         <ImageContainer>
           <Image src={Poster1} alt="poster1" />
