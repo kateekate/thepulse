@@ -69,7 +69,7 @@ const Back = styled(Card)`
   }
 `;
 
-export default function FlipCard({ text, frontImage }: FlipCardProps) {
+export const FlipCard = ({ text, frontImage }: FlipCardProps) => {
   const [flipped, set] = useState(false);
   const { transform, opacity } = useSpring({
     opacity: flipped ? 1 : 0,
@@ -92,4 +92,4 @@ export default function FlipCard({ text, frontImage }: FlipCardProps) {
       />
     </PulsingContainer>
   );
-}
+};
