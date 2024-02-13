@@ -1,18 +1,26 @@
 import styled, { keyframes } from "styled-components";
+import { TriangleUpIcon } from "@chakra-ui/icons";
+import { IconButton } from "@chakra-ui/react";
 import { LText, MText, XlText } from "components/shared/Text";
 import { DescriptionContainer } from "components/DescriptionContainer/DescriptionContainer";
 import { CarouselContainer } from "components/CarouselContainer/CarouselContainer";
 import { ServiceContainer } from "components/ServiceContainer/ServiceContainer";
+import { FlipCardsContainer } from "components/FlipCardsContainer/FlipCardsContainer";
+import { ImageContainer } from "components/shared/ImageContainer";
+import {
+  TextContainer,
+  TextContainerWithPadding,
+} from "components/shared/TextContainer";
 import poster1 from "../../images/poster1.png";
 import poster2 from "../../images/poster2.png";
-import { FlipCardsContainer } from "components/FlipCardsContainer/FlipCardsContainer";
+import backgroundImg from "../../images/playContainerImg/background.jpeg";
 
 const Header = styled.h1`
   position: absolute;
   top: 15vw;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #614a90;
+  color: #9078e9cc;
   z-index: -10;
   font-size: 35vw;
   font-weight: 800;
@@ -47,37 +55,50 @@ const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: 25vw;
-  gap: 60px;
+  gap: 80px;
 `;
 
-const TextContainer = styled.div`
+const PlayContainer = styled.div`
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-color: black;
+  margin: 20px 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 60px;
-`;
-
-const TextContainerPadding = styled(TextContainer)`
-  padding: 0 25vw;
-  text-align: justify;
-`;
-
-const ImageContainer = styled.div`
-  display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 30px 0;
-  gap: 0;
-
-  transition: transform 0.3s;
-  &:hover {
-    transform: scale(1.1);
-  }
+  align-items: center;
 `;
 
-const Image = styled.img`
-  width: 80vw;
-  height: auto;
+const InsidePlayContainer = styled.div`
+  width: 90vw;
+  height: 100%;
+  background-image: url(${backgroundImg});
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20%;
+`;
+
+const Line = styled.div`
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 5px;
+  background-color: #fe5401;
+`;
+
+const Button = styled.button`
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  background-color: #000000;
+  color: #fe5401;
+  font-weight: 800;
+  z-index: 5;
 `;
 
 export const LandingComponent = () => {
@@ -91,18 +112,14 @@ export const LandingComponent = () => {
         </TextContainer>
 
         <DescriptionContainer />
-
         <CarouselContainer />
-
-        <ImageContainer>
-          <Image src={poster1} alt="poster1" />
-        </ImageContainer>
+        <ImageContainer src={poster1} alt="poster1" />
 
         <SubHeader>
           Think Big & Designing Today for Tomorrow&apos;s Stories
         </SubHeader>
 
-        <TextContainerPadding>
+        <TextContainerWithPadding>
           <XlText>
             Our team of creative minds and technical experts are passionate
             about delivering exceptional experiences that captivate and inspire.
@@ -114,14 +131,25 @@ export const LandingComponent = () => {
             your audience, leaving a lasting impression that goes beyond the
             event.
           </MText>
-        </TextContainerPadding>
+        </TextContainerWithPadding>
 
         <FlipCardsContainer />
         <ServiceContainer />
+        <ImageContainer src={poster2} alt="poster2" />
 
-        <ImageContainer>
-          <Image src={poster2} alt="poster2" />
-        </ImageContainer>
+        <PlayContainer>
+          <InsidePlayContainer>
+            <Button type="button">
+              <IconButton
+                aria-label="Play"
+                icon={<TriangleUpIcon transform="rotate(90deg)" />}
+                onClick={() => console.log("Play")}
+                boxSize="20px"
+              />
+            </Button>
+          </InsidePlayContainer>
+          <Line />
+        </PlayContainer>
       </MainContainer>
     </div>
   );
