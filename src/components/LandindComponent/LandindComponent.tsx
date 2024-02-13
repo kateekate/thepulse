@@ -35,21 +35,25 @@ export const LandingComponent = () => {
       <Header>Pulse</Header>
       <MainContainer>
         <TextContainer>
-          <LText>From Concept to Creation</LText>
-          <SubHeader>Innovate. Illuminate. Inspire.</SubHeader>
+          <Parallax speed={-6}>
+            <LText>From Concept to Creation</LText>
+          </Parallax>
+          <Parallax speed={-6}>
+            <SubHeader>Innovate. Illuminate. Inspire.</SubHeader>
+          </Parallax>
         </TextContainer>
 
         <DescriptionContainer />
         <CarouselContainer />
-        <Parallax speed={-5}>
-          <ImageContainer src={poster1} alt="poster1" />
-        </Parallax>
-        <Parallax speed={-3}>
+
+        <ImageContainer src={poster1} alt="poster1" />
+
+        <Parallax speed={-6}>
           <SubHeader>
             Think Big & Designing Today for Tomorrow&apos;s Stories
           </SubHeader>
         </Parallax>
-        <Parallax speed={-3}>
+        <Parallax speed={-6}>
           <TextContainerWithPadding>
             <XlText>
               Our team of creative minds and technical experts are passionate
@@ -67,17 +71,16 @@ export const LandingComponent = () => {
         </Parallax>
         <FlipCardsContainer />
 
-        <Parallax speed={-5}>
+        <Parallax speed={-6}>
           <ServiceContainer />
         </Parallax>
-        <Parallax speed={-5}>
-          <ImageContainer src={poster2} alt="poster2" />
-        </Parallax>
+
+        <ImageContainer src={poster2} alt="poster2" />
 
         <Parallax speed={-5}>
           <PlayBtnContainer />
         </Parallax>
-        <Parallax speed={-8}>
+        <Parallax speed={-6}>
           <FooterContainer />
         </Parallax>
       </MainContainer>

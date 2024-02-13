@@ -76,6 +76,16 @@ export const SubHeader = styled.p`
   }
 `;
 
+const VioletTextAnimation = keyframes`
+  from {
+    color: #6a6868bf;
+  }
+  to {
+    color: #9078e9cc;
+    border: 1px solid #9078e9cc;
+  }
+`;
+
 export const FooterHeader = styled.p`
   width: 55vw;
   padding: 0 40px;
@@ -89,6 +99,6 @@ export const FooterHeader = styled.p`
   transition: color 0.3s ease;
 
   &:hover {
-    animation: ${fillTextAnimation} 0.5s forwards;
+    animation: ${VioletTextAnimation} 0.5s forwards;
   }
 `;
