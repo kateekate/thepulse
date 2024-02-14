@@ -21,12 +21,13 @@ import { PlayBtnContainer } from "components/PlayBtnContainer/PlayBtnContainer";
 import { FooterContainer } from "components/FooterContainer/FooterContainer";
 import poster1 from "../../images/poster1.png";
 import poster2 from "../../images/poster2.png";
+import { FeedbackBtn } from "components/FeedbackContainer/FeedbackBtn";
 
 const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: 25vw;
-  gap: 80px;
+  gap: 8vw;
 `;
 
 export const LandingComponent = () => {
@@ -41,9 +42,9 @@ export const LandingComponent = () => {
           <Parallax speed={-6}>
             <SubHeader>Innovate. Illuminate. Inspire.</SubHeader>
           </Parallax>
+          <DescriptionContainer />
         </TextContainer>
 
-        <DescriptionContainer />
         <CarouselContainer />
 
         <ImageContainer src={poster1} alt="poster1" />
@@ -80,6 +81,7 @@ export const LandingComponent = () => {
         <Parallax speed={-5}>
           <PlayBtnContainer />
         </Parallax>
+        <FeedbackBtn />
         <Parallax speed={-6}>
           <FooterContainer />
         </Parallax>

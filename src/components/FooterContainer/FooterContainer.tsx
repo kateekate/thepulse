@@ -3,17 +3,17 @@ import { FooterHeader } from "components/shared/Text";
 
 const Container = styled.div`
   height: auto;
-  padding-top: 20px;
+  padding: 20px 0 100px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 120px;
+  gap: 20px;
   background-color: #000000;
 `;
 
 const Footer = styled.footer`
-  height: 10vh;
+  padding: 40px 0 65px 0;
   display: flex;
   flex-direction: column;
   text-transform: uppercase;
@@ -31,7 +31,6 @@ export const FooterContainer = () => {
       <FooterHeader>Don&apos;t worry, we just blow your mind</FooterHeader>
       <Footer>
         <a href="https://www.instagram.com/">Instagram</a>
-        <p>© 2024 Pulse. All Rights Reserved.</p>
       </Footer>
     </Container>
   );

@@ -4,7 +4,7 @@ export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 60px;
+  gap: 50px;
 `;
 
 export const TextContainerWithPadding = styled(TextContainer)`
